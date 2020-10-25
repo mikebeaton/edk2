@@ -17,3 +17,6 @@
 	path = BaseTools/Source/C/BrotliCompress/brotli
 	url = https://github.com/google/brotli
 	ignore = untracked
+[submodule "OpenCorePkg"]
+	path = OpenCorePkg
+	url = https://github.com/acidanthera/OpenCorePkg
