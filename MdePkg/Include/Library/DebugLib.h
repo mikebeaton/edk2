@@ -425,6 +425,16 @@ UnitTestDebugAssert (
         _DEBUG (Expression);       \
       }                            \
     } while (FALSE)
+#elif defined (__GNUC__) || defined (__clang__)
+#define DEBUG(Expression)                                \
+    do {                                                   \
+      _Pragma("GCC diagnostic push")                       \
+      _Pragma("GCC diagnostic ignored \"-Wunused-value\"") \
+      if ((FALSE)) {                                       \
+        (VOID) Expression;                                 \
+      }                                                    \
+      _Pragma("GCC diagnostic pop")                        \
+    } while (FALSE)
 #else
 #define DEBUG(Expression)
 #endif
