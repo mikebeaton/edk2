@@ -35,13 +35,6 @@
     }
   !endif
 
-  OvmfPkg/VirtioNetDxe/VirtioNet.inf {
-    <LibraryClasses>
-      UefiDriverEntryPoint|OvmfPkg/Library/UefiDriverEntryPointFwCfgOverrideLib/UefiDriverEntryPointFwCfgOverrideLib.inf
-    <PcdsFixedAtBuild>
-      gUefiOvmfPkgTokenSpaceGuid.PcdEntryPointOverrideFwCfgVarName|"opt/org.tianocore/VirtioNetSupport"
-  }
-
   !if $(NETWORK_ISCSI_ENABLE) == TRUE
     NetworkPkg/IScsiDxe/IScsiDxe.inf {
       <LibraryClasses>
@@ -53,3 +46,10 @@
   !endif
 
 !endif
+
+OvmfPkg/VirtioNetDxe/VirtioNet.inf {
+  <LibraryClasses>
+    UefiDriverEntryPoint|OvmfPkg/Library/UefiDriverEntryPointFwCfgOverrideLib/UefiDriverEntryPointFwCfgOverrideLib.inf
+  <PcdsFixedAtBuild>
+    gUefiOvmfPkgTokenSpaceGuid.PcdEntryPointOverrideFwCfgVarName|"opt/org.tianocore/VirtioNetSupport"
+}
