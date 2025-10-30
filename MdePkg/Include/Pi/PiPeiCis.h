@@ -518,9 +518,10 @@ EFI_STATUS
   @param  Source           The pointer to the source buffer of the memory copy.
   @param  Length           The number of bytes to copy from Source to Destination.
 
+  @return Destination.
 **/
 typedef
-VOID
+VOID *
 (EFIAPI *EFI_PEI_COPY_MEM)(
   IN VOID                       *Destination,
   IN VOID                       *Source,
@@ -534,9 +535,10 @@ VOID
   @param  Size             The number of bytes in Buffer to fill.
   @param  Value            The value to fill Buffer with.
 
+  @return Buffer.
 **/
 typedef
-VOID
+VOID *
 (EFIAPI *EFI_PEI_SET_MEM)(
   IN VOID                       *Buffer,
   IN UINTN                      Size,
