@@ -125,7 +125,7 @@ AsmRelocateApResetVector:
 
 .prepareStack:
     ; The stack can then be used to switch from long mode to compatibility mode
-    mov rsp, STACK_TOP
+    lea rsp, [STACK_TOP] ; This change is a mistake!!! Do not commit. (But does allow a non-working TdxDxe.efi to build on XCODE5.)
 
 .loadGDT:
     cli

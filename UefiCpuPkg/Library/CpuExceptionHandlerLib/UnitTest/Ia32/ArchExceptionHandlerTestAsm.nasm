@@ -190,7 +190,7 @@ ASM_PFX(TriggerINTnException):
     mov  ecx, dword [esp + 0xc]
     push ecx
     mul  ecx
-    mov  ecx, AsmTriggerException0
+    lea  ecx, [rel AsmTriggerException0] ; BROKEN FIX - do not merge; just to test rest of build in XCODE5
     add  eax, ecx
     pop  ecx
     pop  edx

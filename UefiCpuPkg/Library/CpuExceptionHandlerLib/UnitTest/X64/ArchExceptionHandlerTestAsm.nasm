@@ -238,7 +238,7 @@ ASM_PFX(TriggerINTnException):
     push rcx
     lea  rax, [AsmTriggerException1 - AsmTriggerException0]
     mul  rcx
-    mov  rcx, AsmTriggerException0
+    lea  rcx, [rel AsmTriggerException0] ; BROKEN FIX - do not merge; just to test rest of build in XCODE5
     add  rax, rcx
     pop  rcx
     pop  rdx
