@@ -802,7 +802,8 @@
   # 3017: <entity> may be used before being set (NOTE: This was fixed in OpenSSL 1.1 HEAD with
   #       commit d9b8b89bec4480de3a10bdaf9425db371c19145b, and can be dropped then.)
   XCODE:*_*_IA32_CC_FLAGS   = -mmmx -msse -U_WIN32 -U_WIN64 $(OPENSSL_FLAGS) $(OPENSSL_FLAGS_NOASM) -w -std=c99 -Wno-error=uninitialized -DOPENSSL_NO_APPLE_CRYPTO_RANDOM
-  XCODE:*_*_X64_CC_FLAGS    = -mmmx -msse -U_WIN32 -U_WIN64 $(OPENSSL_FLAGS) $(OPENSSL_FLAGS_NOASM) -w -std=c99 -Wno-error=uninitialized -DOPENSSL_NO_APPLE_CRYPTO_RANDOM
+  # Remove __APPLE__ for CryptoPkg/Library/OpensslLib/openssl/include/openssl/byteorder.h
+  XCODE:*_*_X64_CC_FLAGS    = -U__APPLE__ -mmmx -msse -U_WIN32 -U_WIN64 $(OPENSSL_FLAGS) $(OPENSSL_FLAGS_NOASM) -w -std=c99 -Wno-error=uninitialized -DOPENSSL_NO_APPLE_CRYPTO_RANDOM
 
   #
   # AARCH64 uses strict alignment and avoids SIMD registers for code that may execute
