@@ -1241,6 +1241,7 @@ CVfrVarDataTypeDB::DataTypeAddField (
   pNewField->mFieldType    = pFieldType;
   pNewField->mArrayNum     = ArrayNum;
   pNewField->mIsBitField   = FALSE;
+  pNewField->mBitWidth     = 0;
   if ((mNewDataType->mTotalSize % Align) == 0) {
     pNewField->mOffset     = mNewDataType->mTotalSize;
   } else {
