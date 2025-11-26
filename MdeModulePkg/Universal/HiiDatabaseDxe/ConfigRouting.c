@@ -793,6 +793,8 @@ CompareNameElementDefault (
   UINTN       AppendSize;
   UINTN       TotalSize;
 
+  Status = EFI_ABORTED;
+
   AppendString  = NULL;
   NvConfigExist = NULL;
   //

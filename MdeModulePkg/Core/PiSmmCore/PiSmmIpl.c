@@ -1643,6 +1643,10 @@ GetFullSmramRanges (
     AdditionSmramRangeCount = 2;
   }
 
+  SmramRanges         = NULL;
+  SmramReservedRanges = NULL;
+  TempSmramRanges     = NULL;
+
   if (SmramReservedCount == 0) {
     //
     // No reserved SMRAM entry from SMM Configuration Protocol.

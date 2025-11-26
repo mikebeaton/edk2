@@ -450,6 +450,9 @@ CreateStorage (
       break;
   }
 
+  Storage        = NULL;
+  BrowserStorage = NULL;
+
   if (StorageType != EFI_HII_VARSTORE_NAME_VALUE) {
     if (StorageName == NULL) {
       ASSERT (StorageName != NULL);
