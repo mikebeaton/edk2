@@ -13,6 +13,8 @@
 #include "RedfishHttpData.h"
 #include "RedfishHttpOperation.h"
 
+extern int  _fltused;
+
 REDFISH_HTTP_CACHE_PRIVATE  *mRedfishHttpCachePrivate = NULL;
 
 /**

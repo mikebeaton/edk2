@@ -13,6 +13,8 @@
 
 #define REDFISH_VERSION_DEFAULT_STRING  L"v1"
 
+extern int  _fltused;
+
 REDFISH_CREDENTIAL_PRIVATE  *mCredentialPrivate = NULL;
 
 /**
