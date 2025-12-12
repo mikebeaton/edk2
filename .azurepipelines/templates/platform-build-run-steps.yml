@@ -100,7 +100,10 @@ steps:
 #   are all resolved.
 - template: basetools-build-steps.yml
   parameters:
-    tool_chain_tag: ${{ parameters.tool_chain_tag }}
+    ${{ if startsWith(parameters.tool_chain_tag, 'VS') }}:
+      tool_chain_tag: ${{ parameters.tool_chain_tag }}
+    ${{ else }}:
+      tool_chain_tag: GCC
 
 # Potential Extra steps
 - ${{ parameters.extra_install_step }}
