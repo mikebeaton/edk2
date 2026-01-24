@@ -75,6 +75,8 @@ class ToolDefClassObject(object):
 
         self.IncludeToolDefFile(FileName)
 
+        fart
+
         self.ToolsDefTxtDatabase[TAB_TOD_DEFINES_TARGET] = list(set(self.ToolsDefTxtDatabase[TAB_TOD_DEFINES_TARGET]))
         self.ToolsDefTxtDatabase[TAB_TOD_DEFINES_TOOL_CHAIN_TAG] = list(set(self.ToolsDefTxtDatabase[TAB_TOD_DEFINES_TOOL_CHAIN_TAG]))
         self.ToolsDefTxtDatabase[TAB_TOD_DEFINES_TARGET_ARCH] = list(set(self.ToolsDefTxtDatabase[TAB_TOD_DEFINES_TARGET_ARCH]))
@@ -185,6 +187,7 @@ class ToolDefClassObject(object):
                 continue
             else:
                 self.ToolsDefTxtDictionary[Name] = Value
+                EdkLogger.debug(EdkLogger.DEBUG_8, "MIKE: %s = %s" % (Name, Value))
                 if List[0] != TAB_STAR:
                     self.ToolsDefTxtDatabase[TAB_TOD_DEFINES_TARGET] += [List[0]]
                 if List[1] != TAB_STAR:
